@@ -44,4 +44,4 @@ set_target_properties( ${PROJECT_NAME} PROPERTIES IMPORTED_LOCATION
 target_include_directories( ${PROJECT_NAME} INTERFACE
                             ${CMAKE_CURRENT_BINARY_DIR}/install/include )
 
-target_link_libraries( ${PROJECT_NAME} INTERFACE hiredis )
+target_link_libraries( ${PROJECT_NAME} INTERFACE hiredis -Wl,--whole-archive pthread -Wl,--no-whole-archive )
